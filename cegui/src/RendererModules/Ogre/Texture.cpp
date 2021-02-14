@@ -212,15 +212,17 @@ void OgreTexture::loadFromMemory(const void* buffer, const Sizef& buffer_size,
     char* bufferCopy = new char[byte_size];
     memcpy(bufferCopy, buffer, byte_size);
 
-    const Ogre::PixelBox* pixelBox = new Ogre::PixelBox(buffer_size.d_width, buffer_size.d_height,
-                                                        1, toOgrePixelFormat(pixel_format), bufferCopy);
+    const Ogre::PixelBox pixelBox(buffer_size.d_width, buffer_size.d_height,
+                                  1, toOgrePixelFormat(pixel_format), bufferCopy);
     createEmptyOgreTexture(pixel_format);
     d_texture->freeInternalResources();
     d_texture->setWidth(buffer_size.d_width);
     d_texture->setHeight(buffer_size.d_height);
     d_texture->setDepth(1);
     d_texture->createInternalResources();
-    d_texture->getBuffer(0,0).get()->blitFromMemory(*pixelBox);
+    d_texture->getBuffer(0,0).get()->blitFromMemory(pixelBox);
+
+    delete[] bufferCopy;
 
     // throw exception if no texture was able to be created
     if (OGRE_ISNULL(d_texture))
