@@ -64,7 +64,7 @@
 #endif
 
 #if OGRE_VERSION > 0x10B00
-#include <RTShaderSystem/OgreRTShaderConfig.h>
+#include <OgreRTShaderConfig.h>
 #endif
 
 // Start of CEGUI namespace section
