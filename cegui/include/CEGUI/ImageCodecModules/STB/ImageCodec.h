@@ -28,7 +28,7 @@
  ***************************************************************************/
 #ifndef _CEGUISTBImageCodec_h_
 #define _CEGUISTBImageCodec_h_
-#include "../../ImageCodec.h"
+#include "CEGUI/ImageCodec.h"
 
 
 #if (defined( __WIN32__ ) || defined( _WIN32 )) && !defined(CEGUI_STATIC)

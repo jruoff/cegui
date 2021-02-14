@@ -27,7 +27,7 @@
 #ifndef _CEGUIOgreTextureTarget_h_
 #define _CEGUIOgreTextureTarget_h_
 
-#include "../../TextureTarget.h"
+#include "CEGUI/TextureTarget.h"
 #include "CEGUI/RendererModules/Ogre/RenderTarget.h"
 
 #if defined(_MSC_VER)
